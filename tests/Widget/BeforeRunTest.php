@@ -12,21 +12,13 @@ use Yii\Widget\Tests\Support\Widget\Widget;
  */
 final class BeforeRunTest extends TestCase
 {
-    public function testRender(): void
-    {
-        Widget::widget()->begin();
-
-        $output = Widget::end();
-
-        $this->assertSame('<>', $output);
-    }
-
     public function testBeforeRun(): void
     {
-        Widget::widget()->id('beforerun')->begin();
+        $this->assertEmpty(Widget::widget()->id('beforerun')->render());
+    }
 
-        $output = Widget::end();
-
-        $this->assertEmpty($output);
+    public function testRender(): void
+    {
+        $this->assertSame('<>', Widget::widget()->render());
     }
 }

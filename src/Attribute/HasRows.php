@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasRows is used by widgets which have a rows attribute.
+ * Is used by widgets which have a rows attribute.
  */
 trait HasRows
 {
     /**
-     * The number of lines of text for the UA to show.
+     * Returns a new instance specifying the number of lines of text for the UA to show.
      *
      * @param int $value The number of lines of text for the UA to show.
      *

@@ -209,6 +209,18 @@ final class RenderTest extends TestCase
         $this->assertTrue($inputWidget->hasError());
     }
 
+    public function testHeight(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text" height="100">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->height(100)->render(),
+        );
+    }
+
     public function testMultiple(): void
     {
         Assert::equalsWithoutLE(
@@ -360,6 +372,18 @@ final class RenderTest extends TestCase
         );
     }
 
+    public function testSrc(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text" src="small.jpg">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->src('small.jpg')->render(),
+        );
+    }
+
     public function testSuffix(): void
     {
         Assert::equalsWithoutLE(
@@ -405,24 +429,15 @@ final class RenderTest extends TestCase
         );
     }
 
-    public function testWrap(): void
+    public function testWidth(): void
     {
         Assert::equalsWithoutLE(
             <<<HTML
             <div>
-            <input id="testform-string" name="TestForm[string]" type="text" wrap="hard">
+            <input id="testform-string" name="TestForm[string]" type="text" width="100">
             </div>
             HTML,
-            InputWidget::widget([new TestForm(), 'string'])->wrap()->render(),
-        );
-
-        Assert::equalsWithoutLE(
-            <<<HTML
-            <div>
-            <input id="testform-string" name="TestForm[string]" type="text" wrap="soft">
-            </div>
-            HTML,
-            InputWidget::widget([new TestForm(), 'string'])->wrap('soft')->render(),
+            InputWidget::widget([new TestForm(), 'string'])->width(100)->render(),
         );
     }
 }

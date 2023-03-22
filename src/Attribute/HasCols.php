@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasCols is used by widgets which have a cols attribute.
+ * Is used by widgets which have a cols attribute.
  */
 trait HasCols
 {
     /**
-     * Returns a new instance specifying maximum number of characters per line of text for the UA to show.
+     * Returns a new instance specifying the maximum number of characters per line of text for the UA to show.
      *
      * @param int $value The maximum number of characters per line of text for the UA to show.
      *

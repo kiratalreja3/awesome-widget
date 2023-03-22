@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasAriaLabel is used by widgets which have a aria-label attribute.
+ * Is used by widgets which have an aria-label attribute.
  */
 trait HasAriaLabel
 {
     /**
-     * Returns a new instance with a string value that labels an interactive element.
+     * Returns a new instance specifying a string value that labels an interactive element.
      *
      * @param string $value The value of the aria-label attribute.
      *

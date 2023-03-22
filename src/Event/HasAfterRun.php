@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Event;
 
 /**
- * HasAfterRun is event that is triggered right after the widget is executed.
+ * HasAfterRun is event that's triggered right after the widget is executed.
  */
 trait HasAfterRun
 {

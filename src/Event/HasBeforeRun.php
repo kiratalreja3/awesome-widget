@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Yii\Widget\Event;
 
 /**
- * HasBeforeRun is event that is triggered right before the widget is executed.
+ * HasBeforeRun is an event that's triggered right before the widget is executed.
  */
 trait HasBeforeRun
 {
     /**
      * This method is invoked right before the widget is executed.
      *
-     * The return value of the method will determine whether the widget should continue to run.
+     * The return value of the method will decide whether the widget should continue to run.
      *
      * When overriding this method, make sure you call the parent implementation like the following:
      *

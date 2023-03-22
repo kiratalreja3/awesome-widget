@@ -1,0 +1,117 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Yii\Widget\Tests\Widget;
+
+use PHPUnit\Framework\TestCase;
+use Yii\Widget\Tests\Support\Widget\Widget;
+
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
+final class GlobalAttributesTest extends TestCase
+{
+    public function testAutocomplete(): void
+    {
+        $this->assertSame('<autocomplete="on">', Widget::widget()->autocomplete('on')->render());
+    }
+
+    public function testCols(): void
+    {
+        $this->assertSame('<cols="0">', Widget::widget()->cols(0)->render());
+    }
+
+    public function testContent(): void
+    {
+        $this->assertSame('<test>', Widget::widget()->content('test')->render());
+    }
+
+    public function testContentWithStringable(): void
+    {
+        $this->assertSame('<test>', Widget::widget()->content(new class () {
+            public function __toString(): string
+            {
+                return 'test';
+            }
+        })->render());
+    }
+
+    public function testCrossorigin(): void
+    {
+        $this->assertSame('<crossorigin="anonymous">', Widget::widget()->crossorigin('anonymous')->render());
+    }
+
+    public function testDownload(): void
+    {
+        $this->assertSame('<download>', Widget::widget()->download()->render());
+    }
+
+    public function testHref(): void
+    {
+        $this->assertSame('<href="http://test.com">', Widget::widget()->href('http://test.com')->render());
+    }
+
+    public function testHreflang(): void
+    {
+        $this->assertSame('<hreflang="en">', Widget::widget()->hreflang('en')->render());
+    }
+
+    public function testIsmap(): void
+    {
+        $this->assertSame('<ismap>', Widget::widget()->ismap()->render());
+    }
+
+    public function testLoading(): void
+    {
+        $this->assertSame('<loading="eager">', Widget::widget()->loading('eager')->render());
+    }
+
+    public function testPing(): void
+    {
+        $this->assertSame('<ping="http://test.com">', Widget::widget()->ping('http://test.com')->render());
+    }
+
+    public function testRel(): void
+    {
+        $this->assertSame('<rel="icon">', Widget::widget()->rel('icon')->render());
+    }
+
+    public function testReferrerpolicy(): void
+    {
+        $this->assertSame('<referrerpolicy="no-referrer">', Widget::widget()->referrerpolicy('no-referrer')->render());
+    }
+
+    public function testRows(): void
+    {
+        $this->assertSame('<rows="0">', Widget::widget()->rows(0)->render());
+    }
+
+    public function testSizes(): void
+    {
+        $this->assertSame(
+            '<sizes="(max-width: 300px) 100vw, 300px">',
+            Widget::widget()->sizes('(max-width: 300px) 100vw, 300px')->render(),
+        );
+    }
+
+    public function testSrcset(): void
+    {
+        $this->assertSame(
+            '<srcset="small.jpg 300w, medium.jpg 1000w, big.jpg 2000w">',
+            Widget::widget()->srcset('small.jpg 300w', 'medium.jpg 1000w', 'big.jpg 2000w')->render(),
+        );
+    }
+
+    public function testTarget(): void
+    {
+        $this->assertSame('<target="_blank">', Widget::widget()->target('_blank')->render());
+    }
+
+    public function testWrap(): void
+    {
+        $this->assertSame('<wrap="hard">', Widget::widget()->wrap()->render());
+
+        $this->assertSame('<wrap="soft">', Widget::widget()->wrap('soft')->render());
+    }
+}

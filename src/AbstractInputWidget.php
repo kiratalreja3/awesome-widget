@@ -18,21 +18,21 @@ use function implode;
  */
 abstract class AbstractInputWidget extends AbstractWidget
 {
-    use Attribute\CanBeAutofocus;
-    use Attribute\CanBeDisabled;
-    use Attribute\CanBeReadonly;
-    use Attribute\CanBeRequired;
+    use Attribute\Custom\HasAttributes;
+    use Attribute\Custom\HasPrefixAndSuffix;
     use Attribute\HasAriaDescribedBy;
     use Attribute\HasAriaLabel;
-    use Attribute\HasAttributes;
+    use Attribute\HasAutofocus;
     use Attribute\HasClass;
-    use Attribute\HasForm;
     use Attribute\HasId;
-    use Attribute\HasName;
-    use Attribute\HasPrefixAndSuffix;
     use Attribute\HasTabindex;
     use Attribute\HasTitle;
-    use Attribute\HasValue;
+    use Attribute\Input\CanBeReadonly;
+    use Attribute\Input\HasDisabled;
+    use Attribute\Input\HasForm;
+    use Attribute\Input\HasName;
+    use Attribute\Input\HasRequired;
+    use Attribute\Input\HasValue;
 
     protected array $attributes = [];
     private string $charset = 'UTF-8';
@@ -67,7 +67,7 @@ abstract class AbstractInputWidget extends AbstractWidget
     }
 
     /**
-     * @return string The errors messages for the attribute.
+     * @return string The error messages for the attribute.
      */
     public function getErrorsForAttribute(): string
     {
@@ -75,7 +75,7 @@ abstract class AbstractInputWidget extends AbstractWidget
     }
 
     /**
-     * @return string The firts error message for the attribute.
+     * @return string The first error message for the attribute.
      */
     public function getErrorFirstForAttribute(): string
     {

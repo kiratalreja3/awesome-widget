@@ -7,14 +7,14 @@ namespace Yii\Widget\Attribute;
 use Yii\Html\Helper\CssClass;
 
 /**
- * HasClass is used by widgets which have a class attribute.
+ * Is used by widgets which have a class attribute.
  */
 trait HasClass
 {
     /**
-     * Returns a new instance with the specified class added.
+     * Returns a new instance specifying the `CSS` `HTML` class attribute of the widget.
      *
-     * @param string $value The class value to add.
+     * @param string $value The `CSS` attribute of the widget.
      *
      * @link https://html.spec.whatwg.org/#classes
      */

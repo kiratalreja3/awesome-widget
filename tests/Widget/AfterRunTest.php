@@ -14,10 +14,6 @@ final class AfterRunTest extends TestCase
 {
     public function testRender(): void
     {
-        Widget::widget()->id('afterrun')->begin();
-
-        $output = Widget::end();
-
-        $this->assertSame('<div><id="afterrun"></div>', $output);
+        $this->assertSame('<div><id="afterrun"></div>', Widget::widget()->id('afterrun')->render());
     }
 }

@@ -15,14 +15,6 @@ use Yii\Widget\Tests\Support\Widget\InputWidget;
  */
 final class ExceptionTest extends TestCase
 {
-    public function testAutocomplete(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Autocomplete must be "on" or "off".');
-
-        InputWidget::widget([new TestForm(), 'string'])->autocomplete('')->render();
-    }
-
     public function testDirname(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -53,13 +45,5 @@ final class ExceptionTest extends TestCase
         $this->expectExceptionMessage('The value must be a number.');
 
         InputWidget::widget([new TestForm(), 'string'])->step('x')->render();
-    }
-
-    public function testWrap(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid wrap value. Valid values are: hard, soft.');
-
-        InputWidget::widget([new TestForm(), 'string'])->wrap('')->render();
     }
 }

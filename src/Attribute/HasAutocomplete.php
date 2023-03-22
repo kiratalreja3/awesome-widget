@@ -7,12 +7,12 @@ namespace Yii\Widget\Attribute;
 use InvalidArgumentException;
 
 /**
- * HasAutocomplete is used by widgets which have a autocomplete attribute.
+ * Is used by widgets which have an autocomplete attribute.
  */
 trait HasAutocomplete
 {
     /**
-     * Returns a new instance specifies whether the element represents an input control for which a UA is meant to store
+     * Returns a new instance specifying when the element represents an input control for which a UA is meant to store
      * the value entered by the user (so that the UA can prefill the form later).
      *
      * @param string $value Whether the element represents an input control for which a UA is meant to store

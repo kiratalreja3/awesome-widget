@@ -10,28 +10,26 @@ use Yii\Widget\Attribute;
 
 final class InputWidget extends AbstractInputWidget
 {
-    use Attribute\CanBeChecked;
-    use Attribute\CanBeMultiple;
-    use Attribute\HasAccept;
-    use Attribute\HasAutocomplete;
-    use Attribute\HasCols;
-    use Attribute\HasContainer;
-    use Attribute\HasDirname;
-    use Attribute\HasGroup;
-    use Attribute\HasItems;
-    use Attribute\HasLabel;
-    use Attribute\HasMax;
-    use Attribute\HasMaxLength;
-    use Attribute\HasMin;
-    use Attribute\HasMinLength;
-    use Attribute\HasPattern;
-    use Attribute\HasPlaceholder;
+    use Attribute\Custom\HasContainer;
+    use Attribute\Custom\HasLabel;
     use Attribute\HasPrompt;
-    use Attribute\HasRows;
-    use Attribute\HasSize;
-    use Attribute\HasStep;
-    use Attribute\HasType;
-    use Attribute\HasWrap;
+    use Attribute\Input\CanBeChecked;
+    use Attribute\Input\CanBeMultiple;
+    use Attribute\Input\HasAccept;
+    use Attribute\Input\HasAlt;
+    use Attribute\Input\HasDirname;
+    use Attribute\Input\HasHeight;
+    use Attribute\Input\HasMax;
+    use Attribute\Input\HasMaxLength;
+    use Attribute\Input\HasMin;
+    use Attribute\Input\HasMinLength;
+    use Attribute\Input\HasPattern;
+    use Attribute\Input\HasPlaceholder;
+    use Attribute\Input\HasSize;
+    use Attribute\Input\HasSrc;
+    use Attribute\Input\HasStep;
+    use Attribute\Input\HasType;
+    use Attribute\Input\HasWidth;
 
     private string $tag = 'input';
 

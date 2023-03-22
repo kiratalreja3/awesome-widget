@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasId is used by widgets which have a id attribute.
+ * Is used by widgets which have an id attribute.
  */
 trait HasId
 {
     /**
-     * Returns a new instance with the specified the ID of the widget.
+     * Returns a new instance specifying the ID of the widget.
      *
      * @param string|null $id The ID of the widget.
      *

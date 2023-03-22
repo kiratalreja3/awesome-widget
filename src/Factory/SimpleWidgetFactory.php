@@ -20,11 +20,11 @@ final class SimpleWidgetFactory
          */
         foreach ($definitions as $action => $arguments) {
             if (str_ends_with($action, '()')) {
-                /** @var mixed */
+                /** @psalm-var mixed $setter */
                 $setter = call_user_func_array([$widget, substr($action, 0, -2)], $arguments);
 
                 if ($setter instanceof $widget) {
-                    /** @var object */
+                    /** @psalm-var object $widget */
                     $widget = $setter;
                 }
             }

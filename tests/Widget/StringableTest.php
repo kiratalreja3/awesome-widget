@@ -14,8 +14,6 @@ final class StringableTest extends TestCase
 {
     public function testRender(): void
     {
-        $output = Widget::widget()->id('w0');
-
-        $this->assertSame('<id="w0">', (string) $output);
+        $this->assertSame('<id="w0">', (string) Widget::widget()->id('w0'));
     }
 }
