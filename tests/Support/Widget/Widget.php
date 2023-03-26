@@ -13,6 +13,7 @@ final class Widget extends AbstractWidget
     use Attribute\Custom\HasAttributes;
     use Attribute\Custom\HasContent;
     use Attribute\Custom\HasItems;
+    use Attribute\Custom\HasTag;
     use Attribute\Custom\HasTemplate;
     use Attribute\HasAutocomplete;
     use Attribute\HasCols;
@@ -66,12 +67,18 @@ final class Widget extends AbstractWidget
 
     protected function run(): string
     {
-        $html = trim((new Attributes())->render($this->attributes));
+        $html = '';
+
+        if ($this->tag !== '') {
+            $html = $this->tag;
+        }
+
+        $html .= trim((new Attributes())->render($this->attributes));
 
         if ($this->content !== '' && $html !== '') {
-            $html = $this->content . ' ' . $html;
+            $html .= $this->content . ' ' . $html;
         } elseif ($this->content !== '') {
-            $html = $this->content;
+            $html .= $this->content;
         }
 
         return '<' . $html . '>';

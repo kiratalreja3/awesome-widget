@@ -103,6 +103,11 @@ final class GlobalAttributesTest extends TestCase
         );
     }
 
+    public function testTag(): void
+    {
+        $this->assertSame('<tag>', Widget::widget()->tag('tag')->render());
+    }
+
     public function testTarget(): void
     {
         $this->assertSame('<target="_blank">', Widget::widget()->target('_blank')->render());

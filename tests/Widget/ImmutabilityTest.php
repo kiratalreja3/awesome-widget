@@ -35,6 +35,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($widget, $widget->rows(0));
         $this->assertNotSame($widget, $widget->sizes(''));
         $this->assertNotSame($widget, $widget->srcset(''));
+        $this->assertNotSame($widget, $widget->tag('div'));
         $this->assertNotSame($widget, $widget->target('_blank'));
         $this->assertNotSame($widget, $widget->template(''));
         $this->assertNotSame($widget, $widget->wrap('soft'));

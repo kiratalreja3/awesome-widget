@@ -100,6 +100,14 @@ final class ExceptionTest extends TestCase
         InputWidget::end();
     }
 
+    public function testTag(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Tag name cannot be empty.');
+
+        Widget::widget()->tag('');
+    }
+
     public function testTarget(): void
     {
         $this->expectException(InvalidArgumentException::class);
