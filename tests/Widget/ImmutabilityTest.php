@@ -19,7 +19,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($widget, $widget->attributes([]));
         $this->assertNotSame($widget, $widget->autocomplete('on'));
         $this->assertNotSame($widget, $widget->cols(0));
-        $this->assertNotSame($widget, $widget->content(''));
+        $this->assertNotSame($widget, $widget->content('', false));
         $this->assertNotSame($widget, $widget->crossorigin('anonymous'));
         $this->assertNotSame($widget, $widget->download());
         $this->assertNotSame($widget, $widget->groups());

@@ -24,17 +24,45 @@ final class GlobalAttributesTest extends TestCase
 
     public function testContent(): void
     {
-        $this->assertSame('<test>', Widget::widget()->content('test')->render());
+        $this->assertSame('<test &amp; test>', Widget::widget()->content('test & test')->render());
+    }
+
+    public function testContentWithEncodeFalse(): void
+    {
+        $this->assertSame('<test & test>', Widget::widget()->content('test & test', false)->render());
     }
 
     public function testContentWithStringable(): void
     {
-        $this->assertSame('<test>', Widget::widget()->content(new class () {
-            public function __toString(): string
-            {
-                return 'test';
-            }
-        })->render());
+        $this->assertSame(
+            '<test &amp; test>',
+            Widget::widget()
+            ->content(
+                new class () {
+                    public function __toString(): string
+                    {
+                        return 'test & test';
+                    }
+                }
+            )->render()
+        );
+    }
+
+    public function testContentWithStringableWithEncodeFalse(): void
+    {
+        $this->assertSame(
+            '<test & test>',
+            Widget::widget()
+            ->content(
+                new class () {
+                    public function __toString(): string
+                    {
+                        return 'test & test';
+                    }
+                },
+                false,
+            )->render()
+        );
     }
 
     public function testCrossorigin(): void
